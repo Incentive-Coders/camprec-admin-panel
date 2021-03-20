@@ -1,0 +1,110 @@
+.home{
+    display: flex;
+    height: 600px;
+}
+.get_started{
+    align-content: center;
+    margin-right: 15em;
+    padding-right: 2em;
+    margin-top:5em;
+}
+.brand-name{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #565387;
+}
+#join-us {
+    height: 750px;
+    color: #565387;
+       
+} 
+.student{
+    height: 200px;
+    width: 350px;
+}
+.company{
+    height: 200px;
+    width: 200px;
+}
+.logos{
+    margin-left: 5% !important; 
+}
+.pop{
+    display: flex;
+}
+.login_img{
+    height: 150px;
+    width: auto;
+}
+.form_model{
+    border-radius: 25px;
+}
+.margin_right{
+    margin-right: 70%;
+}
+.vediosize{
+    height: 65% !important;
+    width: 100% !important;
+}
+.profile_img{
+    height: 200px !important;
+    width: 200px !important;
+    margin-left:165px;
+    border-radius: 200px;
+}
+.profile_width{
+    text-justify: auto;
+
+}
+.margin-top{
+    margin: 1.5em;
+    
+}
+.card2{
+    width:100%;
+    margin-left: 3em;
+}
+.fsize{
+    font-size: 1.5rem;
+}
+
+.fsize2{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.cb{
+    margin-top: 100px;
+    
+}
+.cb2{
+    margin-left: 300px;
+    margin-bottom: 100px;
+}
+
+.details{
+    margin-left: -150px;
+}
+.profile_img2{
+    height: 200px !important;
+    width: 200px !important;
+    margin-left:165px;
+    
+}
+.marginb{
+    margin-bottom: 4em;
+}
+.addheight{
+    height: 200px;
+    width:300px;
+}
+.card3{
+    width:100%;
+}
+.addjb{
+    width:60%;
+    text-align: center;
+    margin: auto;
+}
+.margin-top{
+    margin-top: 50px;
+}
