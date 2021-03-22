@@ -11,7 +11,6 @@ app.on('ready', function(){
     
     // Create new Window
     mainWindow = new BrowserWindow({});
-    
     // Load html into window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, './Screens/mainWindow.html'),
@@ -21,7 +20,6 @@ app.on('ready', function(){
     
     // Build the menu from the template
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-
     // Insert Menu
     Menu.setApplicationMenu(mainMenu);
 });
@@ -29,21 +27,9 @@ app.on('ready', function(){
 // Create menu template
 const mainMenuTemplate = [
     {
-        label:'File',
-        submenu : [
-            {
-                label: 'Add Item'
-            },
-            {
-                label: 'Clear Items'
-            },
-            {
-                label: 'Exit',
-                accelerator: 'Ctrl+Q',
-                click(){
-                    app.quit();
-                }
-            }
-        ]
+        label:'Home',
+        onclick() {
+            
+        }
     }
 ];
