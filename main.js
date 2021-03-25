@@ -30,7 +30,6 @@ const mainMenuTemplate = [
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // Insert Menu
     Menu.setApplicationMenu(mainMenu);
-});
         }
     }
 ];
