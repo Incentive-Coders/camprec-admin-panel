@@ -26,7 +26,7 @@ const mainMenuTemplate = [
              // Create new Window
     data_connection_checker
     
-    // Build the menu from the template
+    
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // Insert Menu
     Menu.setApplicationMenu(mainMenu);
