@@ -5,10 +5,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-.bg{
-    background-image: linear-gradient(rgb(253, 253, 253),#918fc0);
-    border-radius: 9px;
-}
+
 .center{
     text-align: center;
     margin-bottom: 3px;
@@ -20,8 +17,12 @@ body {
 /* .flexbox{
     display: flex;
 } */
+.container{
+    width:100%;
+}
+
 .marg{
-    margin-left: 90px;
+    margin-left: 100px;
     font-size: 2em;
 }
 .margin-t{
@@ -75,11 +76,14 @@ body {
     color: #fff;
     outline: none;
     border: none;
-    border-radius: 1.8em 1.5em 1.5em 0  !important;
+    border-radius: 1.8em 1.5em 1.5em 1.5em  !important;
     cursor: pointer;
     margin-left: 2em;
     transition: transform 0.2s, box-shadow 0.2s;
     
+  }
+  .ma{
+      margin-bottom: 5px;
   }
   .mar{
       margin-bottom:30px !important;
