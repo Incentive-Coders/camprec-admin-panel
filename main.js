@@ -10,26 +10,39 @@ let mainWindow;
 app.on('ready', function(){
     
     // Create new Window
-    data_connection_checker
+    mainWindow = new BrowserWindow({});
+    // Load html into window
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, './Screens/mainWindow.html'),
+        protocol: 'file:',
+        slashes: true
+    })); 
     
     // Build the menu from the template
-    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-    // Insert Menu
-    Menu.setApplicationMenu(mainMenu);
+    // const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+    // // Insert Menu
+    // Menu.setApplicationMenu(mainMenu);
 });
-
+const notifyBtn = document.getElementById('btnid1')
+notifyBtn.addEventListener('click', function (event) {
+    const modalPath = path.join('file://', __dirname, './Screens/delete_student.html')
+    let win = new BrowserWindow({ width: 400, height: 200 })
+    win.on('close', function () { win = null })
+    win.loadURL(modalPath)
+    win.show()
+  })
 // Create menu template
-const mainMenuTemplate = [
-    {
-        label:'Home',
-        onclick() {
-             // Create new Window
-    data_connection_checker
+// const mainMenuTemplate = [
+//     {
+//         label:'Home',
+//         onclick() {
+//              // Create new Window
+ 
     
     
-    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-    // Insert Menu
-    Menu.setApplicationMenu(mainMenu);
-        }
-    }
-];
+//     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+//     // Insert Menu
+//     Menu.setApplicationMenu(mainMenu);
+//         }
+//     }
+// ];
