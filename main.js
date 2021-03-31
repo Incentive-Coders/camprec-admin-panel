@@ -10,26 +10,32 @@ let mainWindow;
 app.on('ready', function(){
     
     // Create new Window
-    data_connection_checker
-    
+    mainWindow = new BrowserWindow({});
+    // Load html into window
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, './Screens/mainWindow.html'),
+        protocol: 'file:',
+        slashes: true
+    })); 
+
     // Build the menu from the template
-    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-    // Insert Menu
-    Menu.setApplicationMenu(mainMenu);
+    // const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+    // // Insert Menu
+    // Menu.setApplicationMenu(mainMenu);
 });
 
 // Create menu template
-const mainMenuTemplate = [
-    {
-        label:'Home',
-        onclick() {
-             // Create new Window
-    data_connection_checker
+// const mainMenuTemplate = [
+//     {
+//         label:'Home',
+//         onclick() {
+//              // Create new Window
+ 
     
     
-    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-    // Insert Menu
-    Menu.setApplicationMenu(mainMenu);
-        }
-    }
-];
+//     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+//     // Insert Menu
+//     Menu.setApplicationMenu(mainMenu);
+//         }
+//     }
+// ];
