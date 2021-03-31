@@ -17,20 +17,13 @@ app.on('ready', function(){
         protocol: 'file:',
         slashes: true
     })); 
-    
+
     // Build the menu from the template
     // const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // // Insert Menu
     // Menu.setApplicationMenu(mainMenu);
 });
-const notifyBtn = document.getElementById('btnid1')
-notifyBtn.addEventListener('click', function (event) {
-    const modalPath = path.join('file://', __dirname, './Screens/delete_student.html')
-    let win = new BrowserWindow({ width: 400, height: 200 })
-    win.on('close', function () { win = null })
-    win.loadURL(modalPath)
-    win.show()
-  })
+
 // Create menu template
 // const mainMenuTemplate = [
 //     {
