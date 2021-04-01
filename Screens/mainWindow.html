@@ -9,6 +9,10 @@
         <link rel = "stylesheet" href="../css/admin.css"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
+    <script>
+      // You can also require other files to run in this process
+      require('../renderer.js')
+    </script>
     <body>
         <div class="bg container">
             <div class="row">
@@ -28,7 +32,9 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col s6 m6 l4"><button class="btn-large btn1 center" id="btnid1" onclick="" ><h6 class="ma">Delete Student</h6></button></div>
+                <div class="col s6 m6 l4">
+                  <button class="btn-large btn1 center" id="btnEd" onclick="window.location.href='./delete_student.html'">Delete Student</button>
+                </div>
               </div>
               <div class="row margin-t">
                 <div class="col s12 l12 m12 ">
@@ -39,9 +45,9 @@
               </div>
               <div class="row margin-t">
                 
-                <div class="col s6 m6 l4"><button class="btn-large btn1 ma" id="btnid2" onclick=""><h6 class="ma">Add Company</h6>  </button></div>
+                <div class="col s6 m6 l4"><button class="btn-large btn1 ma" id="btnid2" onclick="window.location.href='./Add_company.html'"><h6 class="ma">Add Company</h6>  </button></div>
         
-                <div class="col s6 m6 l4"><button class="btn-large btn1" id="btnid3" onclick=""><h6 class="ma">Delete Company</h6>  </button></div>
+                <div class="col s6 m6 l4"><button class="btn-large btn1" id="btnid3" onclick="window.location.href='./delete_company.html'"><h6 class="ma">Delete Company</h6>  </button></div>
               </div>
               <div class="row margin-t">
                 <div class="col s12 l12 m12 ">
@@ -52,15 +58,14 @@
               </div>
               <div class="row ">
             
-                <div class="col s4 m4 l4"><button class="btn-large btn1 margin-b" id="btnid4" onclick=""><h6 class="ma">Add Institute</h6></button></div>
+                <div class="col s4 m4 l4"><button class="btn-large btn1 margin-b" id="btnid4" onclick="window.location.href='./Add_institute.html'"><h6 class="ma">Add Institute</h6></button></div>
                 
-                <div class="col s4 m4 l4"><button class="btn-large btn1 margin-b" id="btnid5" onclick=""><h6 class="ma ma2">Delete Institute</h6></button></div>
+                <div class="col s4 m4 l4"><button class="btn-large btn1 margin-b" id="btnid5" onclick="window.location.href='./delete_college.html'"><h6 class="ma ma2">Delete Institute</h6></button></div>
               </div>
 
         </div>
-    </body>
-    <script src="../main.js">
-    </script>
-     <script src="../index.js">
-     </script>
+        <script src="../main.js">
+        </script>
+        </body>
+    
 </html>
