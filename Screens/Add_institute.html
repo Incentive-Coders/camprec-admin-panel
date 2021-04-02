@@ -1,28 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <meta charset="UTF-8">
         <title>Camprec Admin Panel</title>
         <!-- <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css” rel = ”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”> -->
         <!-- <link rel = "stylesheet" href="../css/home.css"/> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <!-- <link rel = "stylesheet" href="../css/index.css"/> -->
         <link rel = "stylesheet" href="../css/admin.css"/>
-
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="./addInstitute.js">
+        </script>
     </head>
     <body>
         <div class="row">
             <form class="col s12 m12 l12">
               <div class="row">
                 <div class="input-field col s12 m12 l12">
-                    <input id="name" type="email" class="validate">
-                    <label for="name">Name</label>
+                    <input placeholder="Name" id="name" type="text" class="validate">
                 </div> 
                 <div class="input-field col s12 m12 l12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
+                    <input placeholder="Email" id="email" type="email" class="validate">
                 </div>
-                <button class="btn-large btn1 ma">Add</button>
+                <div class="input-field col s12 m12 l12">
+                  <input placeholder="location"  id="location" type="text" class="validate">
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <input  placeholder="website" id="website" type="text" class="validate">
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <input  placeholder="college type" id="college_type" type="text" class="validate">
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <input  placeholder="twitter" id="twitter" type="text" class="validate">
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <input  placeholder="facebook" id="facebook" type="text" class="validate">
+                </div> 
+                <div class="input-field col s12 m12 l12">
+                  <input  placeholder="linkedin" id="linkedin" type="text" class="validate">
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <input  placeholder="instagram" id="instagram" type="text" class="validate">
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <input  placeholder="year_of_established" id="year" type="text" class="validate">
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <input  placeholder="video_link" id="video" type="text" class="validate">
+                 
+                <div class="input-field col s12 m12 l12">
+                    <input  placeholder="password"id="password" type="password" class="validate">
+                </div>
+                <input class="btn-large btn1 ma" id="addbtn" type="button" onclick="create()" ></input>
               </div>
             </form>
           </div>
@@ -30,4 +60,5 @@
     <script src="../main.js">
     
     </script>
+
 </html>
