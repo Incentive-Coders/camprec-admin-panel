@@ -4,14 +4,23 @@
         <title>Camprec Admin Panel</title>
         <!-- <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css” rel = ”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”> -->
         <!-- <link rel = "stylesheet" href="../css/home.css"/> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+         <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <!-- <link rel = "stylesheet" href="../css/index.css"/> -->
         <link rel = "stylesheet" href="../css/admin.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         <script src="./college_list.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-      <table id="my_table">
+      <button onclick="window.location.href='./mainWindow.html'">back</button>
+      <section id="table">
+      <table  class="tablemanager">
         <thead>
           <tr>
               <th>Name</th>
@@ -20,12 +29,52 @@
           </tr>
         </thead>
 
-        <tbody>
+        <tbody id="college_list">
           
         </tbody>
       </table>
+    </section>
     </body>
     <script src="../main.js">
     
+    </script>
+    <script>
+      fetch('https://camprec.herokuapp.com/api/college/list/1',{
+        method:'GET'
+    })
+    .then((r) => r.json())
+    .then(resp => {
+         arr=resp;
+         console.log(resp)
+         resp.forEach((user) => {
+
+           $("#college_list").append(`
+           <tr>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td><input class="btn" type="button" value="delete"></input></td>
+            </tr>
+           `)
+         });
+         $(".tablemanager").tablemanager({
+          firstSort:[
+            [3,0],
+            [2,0],
+            [1,"asc"]
+          ],
+          disable:["last"],
+          appendFilterby:true,
+          debug:true,
+          vocabulary:{
+
+            voc_filter_by:"Filter BY",
+            voc_type_here_filter:"Filter...",
+            voc_show_rows:"Rows Per Page",
+          },
+          pagination:true,
+          showrows:[3],
+
+         })
+    });
     </script>
 </html>
