@@ -33,48 +33,11 @@
           
         </tbody>
       </table>
+      <a href="javascript:prevPage()" id="btn_prev">Prev</a>
+      <a href="javascript:nextPage()" id="btn_next">Next</a>
+          page: <span id="page"></span>
     </section>
     </body>
     <script src="../main.js">
-    
-    </script>
-    <script>
-      fetch('https://camprec.herokuapp.com/api/college/list/1',{
-        method:'GET'
-    })
-    .then((r) => r.json())
-    .then(resp => {
-         arr=resp;
-         console.log(resp)
-         resp.forEach((user) => {
-
-           $("#college_list").append(`
-           <tr>
-            <td>${user.name}</td>
-            <td>${user.email}</td>
-            <td><input class="btn" type="button" value="delete"></input></td>
-            </tr>
-           `)
-         });
-         $(".tablemanager").tablemanager({
-          firstSort:[
-            [3,0],
-            [2,0],
-            [1,"asc"]
-          ],
-          disable:["last"],
-          appendFilterby:true,
-          debug:true,
-          vocabulary:{
-
-            voc_filter_by:"Filter BY",
-            voc_type_here_filter:"Filter...",
-            voc_show_rows:"Rows Per Page",
-          },
-          pagination:true,
-          showrows:[3],
-
-         })
-    });
     </script>
 </html>
