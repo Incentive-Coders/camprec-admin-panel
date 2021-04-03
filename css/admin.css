@@ -71,7 +71,7 @@ body {
 } */
 .btn1 {
     background-color: #565387 !important;
-    padding: 0.5em 1.5em;
+    padding: 0em 1.5em;
     font-size: 1.4em;
     color: #fff;
     outline: none;
@@ -81,6 +81,18 @@ body {
     margin-left: 2em;
     transition: transform 0.2s, box-shadow 0.2s;
     
+  }
+  .btn2{
+    background-color: #565387 !important;
+    padding: 0.5em 1.5em;
+    font-size: 1em;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 1.8em 1.5em 1.5em 1.5em  !important;
+    cursor: pointer;
+    margin-left: 2em;
+    text-justify: center;
   }
   .ma{
       margin-bottom: 5px;
@@ -96,4 +108,29 @@ body {
   .mg{
       margin-top:100px;
       margin-bottom: 200px;
+  }
+  .table1{
+      width:80% !important;
+      border-right: darkgray  !important;
+      border-right-width: 3px  !important;
+  }
+  .btn3{
+    background-color:red !important;
+    color: #fff;
+    border-radius: 1.8em 1.5em 1.5em 1.5em  !important;
+    cursor: pointer;
+    text-decoration-color: white;
+
+  }
+  .marg2{
+      margin-left: 90px;
+      margin-top: 8px;
+  }
+  .width{
+      width:90% !important;
+
+  }
+  
+  .w{
+      width:60px !important;
   }

@@ -18,9 +18,9 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-      <button onclick="window.location.href='./mainWindow.html'">back</button>
-      <section id="table">
-      <table  class="tablemanager">
+      <button class=" btn2 center" onclick="window.location.href='./mainWindow.html'">back</button>
+      <section >
+      <table  class="table1 centered striped">
         <thead>
           <tr>
               <th>Name</th>
@@ -33,9 +33,11 @@
           
         </tbody>
       </table>
-      <a href="javascript:prevPage()" id="btn_prev">Prev</a>
-      <a href="javascript:nextPage()" id="btn_next">Next</a>
-          page: <span id="page"></span>
+      <div class="marg2">
+      <a href="javascript:prevPage()" id="btn_prev" class="marg2" >Prev</a>
+      <a href="javascript:nextPage()" id="btn_next" >Next</a>
+          page: <span id="page" ></span>
+        </div> 
     </section>
     </body>
     <script src="../main.js">
