@@ -42,6 +42,7 @@ const createPost = (name,email,location,year,website,video,password,twitter,face
       console.log(resp.data)
       console.log(resp.status)
     window.alert("Company added Successfuly");
+    window.location.replace('./mainWindow.html');
   })
   .catch(error => {
     console.error('There was an error!');

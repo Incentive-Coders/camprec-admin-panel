@@ -33,7 +33,7 @@ function deleteTag(btn) {
     // remove the row on client side
     row.parentNode.removeChild(row);
   //remove the row from server side
-    let url ="https://camprec.herokuapp.com/api/comapny/delete"
+    let url ="https://camprec.herokuapp.com/api/company/delete"
 fetch(url,{
 method:'POST',
 body: JSON.stringify({
