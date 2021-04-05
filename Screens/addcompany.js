@@ -10,8 +10,7 @@ const twitter= document.getElementById('twitter')
 const facebook= document.getElementById('facebook')
 const instagram= document.getElementById('instagram')
 const linkedin= document.getElementById('linkedin')
-const Button = document.getElementById('addbtn')
-Button.addEventListener('click', event => createPost(nam.value, email.value,location.value,year.value,website.value,video.value,password.value,twitter.value,facebook.value,instagram.value,linkedin.value))
+createPost(nam.value, email.value,location.value,year.value,website.value,video.value,password.value,twitter.value,facebook.value,instagram.value,linkedin.value)
 }
 const createPost = (name,email,location,year,website,video,password,twitter,facebook,instagram,linkedin) => {
     
@@ -39,8 +38,7 @@ const createPost = (name,email,location,year,website,video,password,twitter,face
     })
   .then((r) => r.json())
   .then((resp) => {
-      console.log(resp.data)
-      console.log(resp.status)
+      console.log(resp)
     window.alert("Company added Successfuly");
     window.location.replace('./mainWindow.html');
   })

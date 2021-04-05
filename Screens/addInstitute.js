@@ -11,8 +11,7 @@ const create = () =>{
     const instagram= document.getElementById('instagram')
     const linkedin= document.getElementById('linkedin')
     const college_type=document.getElementById('college_type')
-    const Button = document.getElementById('addbtn')
-    Button.addEventListener('click', event => createPost(nam.value,college_type.value, email.value,location.value,year.value,website.value,video.value,password.value,twitter.value,facebook.value,instagram.value,linkedin.value))
+    createPost(nam.value,college_type.value, email.value,location.value,year.value,website.value,video.value,password.value,twitter.value,facebook.value,instagram.value,linkedin.value)
     }
     const createPost = (name,college_type,email,location,year,website,video,password,twitter,facebook,instagram,linkedin) => {
         
@@ -41,9 +40,9 @@ const create = () =>{
         })
       .then((r) => r.json())
       .then((resp) => {
-          console.log(resp.data)
-          console.log(resp.status)
+          console.log(resp)
         window.alert("Institute added Successfuly");
+        window.location.replace('./mainWindow.html');
       })
       .catch(error => {
         console.error('There was an error!');
