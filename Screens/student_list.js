@@ -1,6 +1,6 @@
 var current_page = 1;
 const fun = (current_page)  => {
-let url ="https://camprec.herokuapp.com/api/college/list/" + current_page
+let url ="https://camprec.herokuapp.com/api/student/list/" + current_page
 fetch(url,{
 method:'GET'
 })
@@ -33,7 +33,7 @@ function deleteTag(btn) {
     // remove the row on client side
     row.parentNode.removeChild(row);
   //remove the row from server side
-    let url ="https://camprec.herokuapp.com/api/college/delete"
+    let url ="https://camprec.herokuapp.com/api/student/delete"
 fetch(url,{
 method:'POST',
 body: JSON.stringify({
