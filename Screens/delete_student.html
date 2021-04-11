@@ -4,14 +4,23 @@
         <title>Camprec Admin Panel</title>
         <!-- <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css” rel = ”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”> -->
         <!-- <link rel = "stylesheet" href="../css/home.css"/> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+         <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <!-- <link rel = "stylesheet" href="../css/index.css"/> -->
         <link rel = "stylesheet" href="../css/admin.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+        <script src="./student_list.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-      <table id="my_table">
+      <a class="center" href="./mainWindow.html"><i class="material-icons">home</i></a>
+      <section >
+      <table  class="table1 centered striped">
         <thead>
           <tr>
               <th>Name</th>
@@ -20,13 +29,17 @@
           </tr>
         </thead>
 
-        <tbody>
+        <tbody id="student_list">
           
         </tbody>
       </table>
-        </body>
+      <div class="marg2">
+      <a href="javascript:prevPage()" id="btn_prev" class="marg2" >Prev</a>
+      <a href="javascript:nextPage()" id="btn_next" >Next</a>
+          page: <span id="page" ></span>
+        </div> 
+    </section>
+    </body>
     <script src="../main.js">
     </script>
-        <script src="../index.js">
-        </script>
 </html>
