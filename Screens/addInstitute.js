@@ -1,51 +1,97 @@
-const create = () =>{
-    const nam = document.getElementById('name')
-    const email = document.getElementById('email')
-    const location = document.getElementById('location')
-    const year = document.getElementById('year')
-    const website = document.getElementById('website')
-    const video = document.getElementById('video')
-    const password = document.getElementById('password')
-    const twitter= document.getElementById('twitter')
-    const facebook= document.getElementById('facebook')
-    const instagram= document.getElementById('instagram')
-    const linkedin= document.getElementById('linkedin')
-    const college_type=document.getElementById('college_type')
-    createPost(nam.value,college_type.value, email.value,location.value,year.value,website.value,video.value,password.value,twitter.value,facebook.value,instagram.value,linkedin.value)
+var current_page = 1;
+const fun = (current_page)  => {
+let url ="https://camprec.herokuapp.com/api/college/list/" + current_page
+fetch(url,{
+method:'GET'
+})
+.then((r) => r.json())
+.then(resp => {
+    arr=resp;
+    console.log(resp)
+    $("#college_list").empty();
+
+    resp.forEach((user) => {
+    if(!user.approve){
+      $("#college_list").append(`
+    <tr>
+    <td>${user.name}</td>
+    <td>${user.email}</td>
+    <td><input class="btn btn1" type="button" value="Approve" onclick=\"approveTag(this)\"></input></td>
+    </tr>
+    `)
     }
-    const createPost = (name,college_type,email,location,year,website,video,password,twitter,facebook,instagram,linkedin) => {
-        
-        console.log(1)
-        fetch('https://camprec.herokuapp.com/api/college/signup', {
-        method: 'POST',
-        body: JSON.stringify({
-            name: name,
-            college_type:college_type,
-            email: email,
-            location:location,
-            year_of_established:year,
-            website:website,
-            vedio_link:video,
-            password:password,
-            social_media : {
-              twitter :twitter,
-              facebook : facebook,
-              linkedin : linkedin,
-              instagram : instagram
-          }
-        }),
-        headers: {
-            'Accept':'*/*','Content-Type': 'application/json', 'Accept-Encoding' : 'gzip, deflate, br', 'Connection' : 'keep-alive'
-        },
-        })
-      .then((r) => r.json())
-      .then((resp) => {
-          console.log(resp)
-        window.alert("Institute added Successfuly");
-        window.location.replace('./mainWindow.html');
-      })
-      .catch(error => {
-        console.error('There was an error!');
-        
+    
     });
+
+});
+}
+function approveTag(btn) {
+    // select the row that's concerned
+    var row = btn.parentNode.parentNode;
+  
+    // select the name of this row
+    var email = row.children[1].textContent;
+  
+    // remove the row on client side
+    row.parentNode.removeChild(row);
+  //remove the row from server side
+    let url ="https://camprec.herokuapp.com/api/admin/approvecollege"
+fetch(url,{
+method:'POST',
+body: JSON.stringify({
+    email: email
+  
+}),
+headers: {
+    'Accept':'*/*','Content-Type': 'application/json', 'Accept-Encoding' : 'gzip, deflate, br', 'Connection' : 'keep-alive'
+},
+
+})
+.then((r) => r.json())
+.then(resp => {
+
+
+});
+  
+  }
+function prevPage()
+{
+    if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
     }
+}
+
+function nextPage()
+{
+    if (current_page < 10) {
+        current_page++;
+        changePage(current_page);
+    }
+}
+function changePage(page)
+{
+    var btn_next = document.getElementById("btn_next");
+    var btn_prev = document.getElementById("btn_prev");
+    var page_span = document.getElementById("page");
+    // Validate page
+    if (page < 1) page = 1;
+    if (page > 10) page = 10;
+
+    page_span.innerHTML = page;
+    if (page == 1) {
+        btn_prev.style.visibility = "hidden";
+    } else {
+        btn_prev.style.visibility = "visible";
+    }
+
+    if (page == 10) {
+        btn_next.style.visibility = "hidden";
+    } else {
+        btn_next.style.visibility = "visible";
+    }
+    fun(page);
+}
+window.onload = function() {
+    changePage(1);
+};
