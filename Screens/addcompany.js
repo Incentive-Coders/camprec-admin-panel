@@ -16,7 +16,7 @@ method:'GET'
     <tr>
     <td>${user.name}</td>
     <td>${user.email}</td>
-    <td><input class="btn btn3" type="button" value="Approve" onclick=\"approveTag(this)\"></input></td>
+    <td><input class="btn btn1" type="button" value="Approve" onclick=\"approveTag(this)\"></input></td>
     </tr>
     `)
     }

@@ -32,43 +32,12 @@ body {
 .margin-b{
     margin-bottom: 80px;
 }
-/* .adminimg{
-    height:200px;
-    width:200px;
-} */
+
 .m_l{
     margin-left: 3em;
 }
 
-/* .grids{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-} */
-/* .btn1{
-    grid-column:span 2 ;
-    justify-self:center;
-}
-.btn2{
-    justify-self: start;
-}
-.btn11{
-    justify-self: center;
-}
-.btn22{
-    justify-self: center;
-}
-.btn33{
-    justify-self: center;
-} */
-/* @media only Screen and (max-width:600px){
-    .grids{
-        display:grid;
-        grid-template-columns: 1fr;
-    }
-    .center{
-        text-align: center;
-    }
-} */
+
 .btn1 {
     background-color: #565387 !important;
     padding: 0em 1.5em;
