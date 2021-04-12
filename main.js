@@ -3,7 +3,7 @@ const url = require('url');
 const path = require('path');
 
 const {app, BrowserWindow, Menu} = electron;
-
+Menu.setApplicationMenu(false);
 let mainWindow;
 
 // Listen for app to be ready
@@ -18,24 +18,7 @@ app.on('ready', function(){
         slashes: true
     })); 
 
-    // Build the menu from the template
-    // const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-    // // Insert Menu
-    // Menu.setApplicationMenu(mainMenu);
+
 });
 
-// Create menu template
-// const mainMenuTemplate = [
-//     {
-//         label:'Home',
-//         onclick() {
-//              // Create new Window
- 
-    
-    
-//     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-//     // Insert Menu
-//     Menu.setApplicationMenu(mainMenu);
-//         }
-//     }
-// ];
+

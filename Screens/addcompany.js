@@ -1,6 +1,6 @@
 var current_page = 1;
 const fun = (current_page)  => {
-let url ="https://camprec.herokuapp.com/api/company/list/" + current_page
+let url ="https://camprec.herokuapp.com/api/company/approvec/" + current_page
 fetch(url,{
 method:'GET'
 })
@@ -9,9 +9,8 @@ method:'GET'
     arr=resp;
     console.log(resp)
     $("#company_list").empty();
-
+    if(resp.length){
     resp.forEach((user) => {
-    if(!user.approve){
       $("#company_list").append(`
     <tr>
     <td>${user.name}</td>
@@ -19,9 +18,13 @@ method:'GET'
     <td><input class="btn btn1" type="button" value="Approve" onclick=\"approveTag(this)\"></input></td>
     </tr>
     `)
-    }
-    
     });
+}
+else{
+    $("#Approve").append(`
+    <h1>All are approved</h1>
+    `)
+}
 
 });
 }

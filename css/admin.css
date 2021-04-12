@@ -82,6 +82,7 @@ body {
       width:80% !important;
       border-right: darkgray  !important;
       border-right-width: 3px  !important;
+      margin-left: 10% !important;
   }
   .btn3{
     background-color:red !important;
@@ -102,4 +103,8 @@ body {
   
   .w{
       width:60px !important;
+  }
+  #Approve{
+      text-align: center !important;
+      margin-top: 20px;
   }
