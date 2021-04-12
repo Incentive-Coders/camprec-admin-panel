@@ -1,6 +1,6 @@
 var current_page = 1;
 const fun = (current_page)  => {
-let url ="https://camprec.herokuapp.com/api/college/approvec/" + current_page
+let url ="https://camprec.herokuapp.com/api/student/approves/" + current_page
 fetch(url,{
 method:'GET'
 })
@@ -8,23 +8,26 @@ method:'GET'
 .then(resp => {
     arr=resp;
     console.log(resp)
-    $("#college_list").empty();
+    $("#student_list").empty();
     if(resp.length){
-    resp.forEach((user) => {
-      $("#college_list").append(`
-    <tr>
-    <td>${user.name}</td>
-    <td>${user.email}</td>
-    <td><input class="btn btn1" type="button" value="Approve" onclick=\"approveTag(this)\"></input></td>
-    </tr>
-    `)
-    });
-  }
-  else{
-    $("#Approve").append(`
-    <h1>All are approved</h1>
-    `)
-  }
+        resp.forEach((user) => {
+            $("#student_list").append(`
+          <tr>
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td><input class="btn btn1" type="button" value="Approve" onclick=\"approveTag(this)\"></input></td>
+          </tr>
+          `)
+          
+          });
+    }
+    else{
+       $("#Approve").append(`
+       <h1>All are approved</h1>
+       `)
+ 
+    }
+   
 
 });
 }
@@ -38,7 +41,7 @@ function approveTag(btn) {
     // remove the row on client side
     row.parentNode.removeChild(row);
   //remove the row from server side
-    let url ="https://camprec.herokuapp.com/api/admin/approvecollege"
+    let url ="https://camprec.herokuapp.com/api/admin/approvestudent"
 fetch(url,{
 method:'POST',
 body: JSON.stringify({
