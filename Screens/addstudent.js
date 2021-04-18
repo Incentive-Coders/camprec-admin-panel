@@ -9,6 +9,7 @@ method:'GET'
     arr=resp;
     console.log(resp)
     $("#student_list").empty();
+    $("#Approve").empty();
     if(resp.length){
         resp.forEach((user) => {
             $("#student_list").append(`
