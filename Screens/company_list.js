@@ -1,19 +1,21 @@
 var current_page = 1;
 const fun = (current_page)  => {
+    $("#company_list").empty();
     $("#load").append(`
         <h1 class="loader"></h1>
     `)
 let url ="https://camprec.herokuapp.com/api/company/list/" + current_page
 fetch(url,{
 method:'GET'
-})
+}
+
+)
 .then((r) => r.json())
 .then(resp => {
     arr=resp;
     console.log(resp)
     $("#load").empty();
     $("#company_list").empty();
-
     resp.forEach((user) => {
 
     $("#company_list").append(`
