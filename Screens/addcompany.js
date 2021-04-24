@@ -1,5 +1,8 @@
 var current_page = 1;
 const fun = (current_page)  => {
+    $("#load").append(`
+        <h1 class="loader"></h1>
+    `)
 let url ="https://camprec.herokuapp.com/api/company/approvec/" + current_page
 fetch(url,{
 method:'GET'
@@ -8,6 +11,7 @@ method:'GET'
 .then(resp => {
     arr=resp;
     console.log(resp)
+    $("#load").empty();
     $("#company_list").empty();
     $("#Approve").empty();
     if(resp.length){
@@ -49,7 +53,7 @@ body: JSON.stringify({
 headers: {
     'Accept':'*/*','Content-Type': 'application/json', 'Accept-Encoding' : 'gzip, deflate, br', 'Connection' : 'keep-alive'
 },
-
+    
 })
 .then((r) => r.json())
 .then(resp => {
