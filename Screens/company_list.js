@@ -1,5 +1,8 @@
 var current_page = 1;
 const fun = (current_page)  => {
+    $("#load").append(`
+        <h1 class="loader"></h1>
+    `)
 let url ="https://camprec.herokuapp.com/api/company/list/" + current_page
 fetch(url,{
 method:'GET'
@@ -8,6 +11,7 @@ method:'GET'
 .then(resp => {
     arr=resp;
     console.log(resp)
+    $("#load").empty();
     $("#company_list").empty();
 
     resp.forEach((user) => {
