@@ -1,5 +1,6 @@
 var current_page = 1;
 const fun = (current_page)  => {
+    $("#premium_list").empty();
     $("#load").append(`
         <h1 class="loader"></h1>
     `)
