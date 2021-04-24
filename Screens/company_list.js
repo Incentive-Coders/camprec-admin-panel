@@ -22,14 +22,14 @@ method:'GET'
     <tr>
     <td>${user.name}</td>
     <td>${user.email}</td>
-    <td><input class="btn btn3" type="button" value="delete" onclick=\"deleteTag(this)\"></input></td>
+    <td><input class="btn btn3" type="button" value="delete" onclick=\"deleteTag(this,current_page)\"></input></td>
     </tr>
     `)
     });
 
 });
 }
-function deleteTag(btn) {
+function deleteTag(btn,current_page) {
     // select the row that's concerned
     var row = btn.parentNode.parentNode;
   
@@ -53,7 +53,7 @@ headers: {
 })
 .then((r) => r.json())
 .then(resp => {
-
+fun(current_page)
 
 });
   
